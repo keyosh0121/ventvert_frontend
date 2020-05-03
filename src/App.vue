@@ -1,7 +1,8 @@
 <template lang="pug">
   v-app
-    v-app-bar(app color="primary" dark)
-      .d-flex.align-center ventveit
+    v-app-bar.indigo(app dark)
+      v-icon.cyan--text(large) mdi-chevron-double-down
+      .d-flex.title.px-4 Vent Vert
       v-spacer
     v-content
       helloWorld
