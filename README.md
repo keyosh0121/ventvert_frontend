@@ -1,4 +1,4 @@
-# ventveit_frontend
+# ventvert_frontend
 
 ## Project setup
 ```
@@ -26,4 +26,4 @@ yarn run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/). 
+See [Configuration Reference](https://cli.vuejs.org/config/).
