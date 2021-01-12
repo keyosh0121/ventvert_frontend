@@ -1,4 +1,4 @@
-# ventveit_frontend
+# ventvert_frontend
 
 ## Project setup
 ```
