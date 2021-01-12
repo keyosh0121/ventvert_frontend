@@ -30,7 +30,7 @@
         content: '',
         category: '',
         selections: ['バグ','機能追加'],
-        completed: false
+        completed: false,
       }
     },
     methods: {
