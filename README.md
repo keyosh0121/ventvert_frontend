@@ -1,29 +1,9 @@
 # ventvert_frontend
+Vue application with vuetify.
+Connects with [ventvert_backend](https://github.com/keyosh0121/ventvert_backend) to serve User Interface
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
+### Dependencies
+ - **axios.js** - provides function for http communication
+ - **vuetify.js** - provides material-design-based UI components
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
