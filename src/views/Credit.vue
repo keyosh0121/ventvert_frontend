@@ -59,7 +59,7 @@
                       h3 {{ displayCredit.amount }} 円
                       | {{ displayCredit.content }}
                       .caption 作成日時: {{ displayCredit.created_at }}
-                      .caption 完了日時: {{ displayCredit.completed_at }}
+                      .caption 更新日時: {{ displayCredit.updated_at }}
                       
         
             .caption {{ credit.content}}
@@ -193,7 +193,7 @@
         this.axios.put('/credits/' + credit.id,
             {
               credit : {
-                completed: completed
+                completed: completed,
               }
             },
             {
