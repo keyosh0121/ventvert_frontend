@@ -48,7 +48,20 @@
             v-icon.red--text(v-if="selfCredit(credit)" :disabled="credit.completed") mdi-arrow-right-box
             v-icon.green--text(v-else :disabled="credit.completed") mdi-arrow-left-box
           v-list-item-content(:color="credit.completed ? 'black' : 'grey'")
-            strong {{ credit.amount }}
+            template
+              v-dialog(v-model="dialog" width="500")
+                template(v-slot:activator="{ on, attrs }")
+                  strong(v-on="on" v-bind="attrs" @click="openCreditDialog(credit)") 
+                    | {{ credit.amount }}
+                v-card
+                  v-card-text
+                    .pa-3(v-if="displayCredit")
+                      h3 {{ displayCredit.amount }} 円
+                      | {{ displayCredit.content }}
+                      .caption 作成日時: {{ displayCredit.created_at }}
+                      .caption 完了日時: {{ displayCredit.completed_at }}
+                      
+        
             .caption {{ credit.content}}
           v-list-item-action
             v-btn(icon color="green" v-if="!credit.completed" @click="changeCreditStatus(credit,true)")
@@ -81,7 +94,9 @@
         show_bond: true,
         amount: null,
         content: "",
-        credit: "false"
+        credit: "false",
+        dialog: false,
+        displayCredit: null,
       }
     },
     computed: {
@@ -101,9 +116,16 @@
       sumOfFilteredCredits(){
         return this.filteredCredits.reduce((sum,e) => sum + e.amount, 0); 
       }
-
     },
     methods:{
+      openCreditDialog(credit){
+        this.displayCredit = credit;
+        this.dialog = true;
+      },
+      closeCreditDialog(){
+        this.displayCredit = null;
+        this.dialog = false;
+      },
       getCredits(page,count){
         this.loading = true;
 
